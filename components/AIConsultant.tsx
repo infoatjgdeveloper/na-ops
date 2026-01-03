@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Loader2, ShieldCheck } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 import { ChatMessage } from '../types';
+import ReactMarkdown from 'react-markdown';
 
 const AIConsultant: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -100,7 +101,23 @@ User question: ${userMessage}`;
                   ? 'bg-cyan-600/20 text-cyan-50 border border-cyan-600/30'
                   : 'bg-slate-800 text-slate-200 border border-slate-700'
                   }`}>
-                  {msg.content}
+                  <div className="prose prose-invert prose-sm max-w-none">
+                    <ReactMarkdown
+                      components={{
+                        h1: ({ node, ...props }) => <h1 className="text-xl font-bold mb-3 text-cyan-400" {...props} />,
+                        h2: ({ node, ...props }) => <h2 className="text-lg font-bold mb-2 text-cyan-400" {...props} />,
+                        h3: ({ node, ...props }) => <h3 className="text-base font-semibold mb-2 text-cyan-300" {...props} />,
+                        p: ({ node, ...props }) => <p className="mb-2 last:mb-0" {...props} />,
+                        ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-2 space-y-1" {...props} />,
+                        ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-2 space-y-1" {...props} />,
+                        li: ({ node, ...props }) => <li className="ml-2" {...props} />,
+                        strong: ({ node, ...props }) => <strong className="font-bold text-cyan-300" {...props} />,
+                        code: ({ node, ...props }) => <code className="bg-slate-900/50 px-1 py-0.5 rounded text-cyan-400" {...props} />,
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  </div>
                 </div>
               </div>
             </div>
