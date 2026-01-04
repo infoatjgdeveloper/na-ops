@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-950 border-t border-slate-900 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
-             <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6">
               <Shield className="w-8 h-8 text-cyan-500" />
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-lg tracking-tight">JG DEVELOPER</span>
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-bold text-white mb-6">Service Areas</h4>
             <ul className="space-y-4 text-sm text-slate-500">
               <li className="hover:text-cyan-400 cursor-pointer">Cybersecurity</li>
@@ -38,15 +38,17 @@ const Footer: React.FC = () => {
               <li className="hover:text-cyan-400 cursor-pointer">Intelligent Automation</li>
               <li className="hover:text-cyan-400 cursor-pointer">Cloud & Infrastructure</li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="font-bold text-white mb-6">Ecosystem</h4>
             <ul className="space-y-4 text-sm text-slate-500">
-              <li className="hover:text-cyan-400 cursor-pointer">JG AI Ecosystem</li>
-              <li className="hover:text-cyan-400 cursor-pointer">BRJU Infosec Inc (USA)</li>
-              <li className="hover:text-cyan-400 cursor-pointer">Governance Platform</li>
-              <li className="hover:text-cyan-400 cursor-pointer">IP Assurance</li>
+              <li className="hover:text-cyan-400 cursor-pointer">
+                <a href="https://jgai.jgdeveloper.com/" target="_blank" rel="noopener noreferrer">JG AI Ecosystem</a>
+              </li>
+              <li className="hover:text-cyan-400 cursor-pointer">
+                <a href="https://brjuinfosec.com" target="_blank" rel="noopener noreferrer">BRJU Infosec Inc (USA)</a>
+              </li>
             </ul>
           </div>
 
